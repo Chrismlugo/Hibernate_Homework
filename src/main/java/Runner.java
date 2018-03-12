@@ -22,12 +22,20 @@ public class Runner {
         Book book3 = new Book("Christine", author1);
         DBHelper.save(book3);
 
+        Book book4 = new Book("The Shadow over Innsmouth", author2);
+        DBHelper.save(book4);
+
+        book3.setTitle("Salem's Lot");
+        DBHelper.update(book3);
+
+
+
 
         List<Book> books = DBHelper.getAll("Book");
 
         List<Author> authors = DBHelper.getAll("Author");
 
-
+        List<Book> booksByAuthor = DBHelper.getBooks(author2.getId());
 
     }
 }
